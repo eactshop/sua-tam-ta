@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đạo Phương Quý – Sữa Tắm Cao Cấp Cho Chó Mèo</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --purple: #7c3aed;
+            --purple-light: #a855f7;
+            --purple-pale: #f3e8ff;
+            --purple-mid: #ede9fe;
+            --green: #10b981;
+            --orange: #f97316;
+            --yellow: #fbbf24;
+            --red: #ef4444;
+            --gray-100: #f9fafb;
+            --gray-200: #f3f4f6;
+            --gray-300: #e5e7eb;
+            --gray-500: #6b7280;
+            --gray-700: #374151;
+            --gray-900: #111827;
+            --white: #ffffff;
+            --shadow: 0 4px 24px rgba(124, 58, 237, 0.12);
+            --shadow-lg: 0 8px 40px rgba(124, 58, 237, 0.18);
+            --radius: 14px;
+            --font-body: 'Nunito', sans-serif;
+            --font-display: 'Playfair Display', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--gray-900);
+            background: var(--white);
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        /* ── NAVBAR ── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray-300);
+            padding: 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-logo svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .nav-logo span {
+            font-weight: 900;
+            font-size: 1rem;
+            color: var(--purple);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-weight: 600;
+            font-size: .92rem;
+            transition: color .2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--purple);
+        }
+
+        .nav-cart {
+            background: var(--purple);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 9px 20px;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: .88rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            transition: background .2s;
+        }
+
+        .nav-cart:hover {
+            background: var(--purple-light);
+        }
+
+        /* ── HERO ── */
+        #hero {
+            background: linear-gradient(135deg, #f0e6ff 0%, #e8f4ff 50%, #f0fff4 100%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 70% 50%, rgba(168, 85, 247, .12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-text {
+            max-width: 480px;
+            padding-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-sub {
+            font-size: .95rem;
+            color: var(--purple);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--purple);
+            margin-bottom: 10px;
+        }
+
+        .hero-tagline {
+            font-size: 1.05rem;
+            color: var(--gray-700);
+            font-weight: 600;
+            margin-bottom: 28px;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 32px;
+        }
+
+        .badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            background: white;
+            border-radius: 12px;
+            padding: 12px 16px;
+            box-shadow: 0 2px 12px rgba(124, 58, 237, .1);
+            min-width: 80px;
+        }
+
+        .badge-icon {
+            font-size: 1.6rem;
+        }
+
+        .badge-text {
+            font-size: .72rem;
+            font-weight: 700;
+            color: var(--gray-700);
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .btn-primary {
+            background: var(--purple);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 36px;
+            font-family: var(--font-body);
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 6px 24px rgba(124, 58, 237, .4);
+            transition: all .25s;
+            letter-spacing: .3px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 32px rgba(124, 58, 237, .5);
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: flex-end;
+            gap: -20px;
+            padding-bottom: 0;
+        }
+
+        .hero-image img {
+            max-height: 340px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, .1));
+        }
+
+        /* ── FEATURE SLIDER ── */
+        #features {
+            padding: 30px 5%;
+            background: white;
+        }
+
+        .feature-slider {
+            display: flex;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-track {
+            display: flex;
+            gap: 20px;
+            transition: transform .4s ease;
+        }
+
+        .feature-card {
+            min-width: calc(33.33% - 14px);
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .feature-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .feature-card-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, .65) 0%, transparent 100%);
+            color: white;
+            font-weight: 800;
+            font-size: 1.05rem;
+            padding: 28px 16px 16px;
+            line-height: 1.3;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .2);
+            cursor: pointer;
+            z-index: 5;
+            transition: all .2s;
+            font-size: 1rem;
+            color: var(--gray-700);
+        }
+
+        .slider-btn:hover {
+            background: var(--purple);
+            color: white;
+        }
+
+        .slider-prev {
+            left: 0;
+        }
+
+        .slider-next {
+            right: 0;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gray-300);
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .dot.active {
+            background: var(--purple);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        /* ── PRODUCT SECTION ── */
+        #product {
+            background: var(--gray-100);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: .85rem;
+            font-weight: 700;
+            color: var(--purple);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .section-desc {
+            color: var(--gray-500);
+            font-size: .95rem;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .product-img-wrap {
+            display: flex;
+            justify-content: center;
+        }
+
+        .product-img-wrap img {
+            max-width: 320px;
+            width: 100%;
+            filter: drop-shadow(0 20px 40px rgba(124, 58, 237, .2));
+        }
+
+        .product-features {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .pf-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .pf-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--purple-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .pf-title {
+            font-weight: 800;
+            color: var(--purple);
+            margin-bottom: 4px;
+        }
+
+        .pf-desc {
+            font-size: .88rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        /* ── COMBO ── */
+        #combo {
+            margin-bottom: 16px;
+            background: white;
+        }
+
+        .combo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .combo-card {
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius);
+            padding: 20px 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all .25s;
+            position: relative;
+            background: white;
+        }
+
+        .combo-card:hover {
+            border-color: var(--purple-light);
+            box-shadow: var(--shadow);
+        }
+
+        .combo-card.selected {
+            border-color: var(--purple);
+            background: var(--purple-pale);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .combo-badge {
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background: var(--orange);
+            color: white;
+            font-size: .72rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 20px;
+        }
+
+        .combo-badge.hot {
+            background: var(--red);
+        }
+
+        .combo-radio {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid var(--gray-300);
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .2s;
+        }
+
+        .combo-card.selected .combo-radio {
+            border-color: var(--purple);
+            background: var(--purple);
+        }
+
+        .combo-card.selected .combo-radio::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .combo-name {
+            font-weight: 800;
+            font-size: .95rem;
+            margin-bottom: 12px;
+        }
+
+        .combo-bottles img {
+            max-height: 80px;
+            object-fit: contain;
+            margin: 0 auto 12px;
+            display: block;
+        }
+
+        .combo-placeholder {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .bottle-icon {
+            font-size: 1.8rem;
+        }
+
+        .combo-price {
+            color: var(--purple);
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+
+        .combo-original {
+            color: var(--gray-500);
+            font-size: .82rem;
+            text-decoration: line-through;
+            margin: 2px 0;
+        }
+
+        .combo-save {
+            color: var(--green);
+            font-size: .8rem;
+            font-weight: 700;
+        }
+
+        /* ── TRUST BADGES ── */
+        .trust-row {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+            background: var(--purple-pale);
+            border-radius: var(--radius);
+            margin: 32px auto;
+            max-width: 960px;
+            overflow: hidden;
+        }
+
+        .trust-item {
+            flex: 1;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 20px;
+            border-right: 1px solid rgba(124, 58, 237, .15);
+        }
+
+        .trust-item:last-child {
+            border-right: none;
+        }
+
+        .trust-icon {
+            font-size: 1.6rem;
+        }
+
+        .trust-text {
+            font-size: .85rem;
+            font-weight: 700;
+            color: var(--purple);
+        }
+
+        /* ── ORDER FORM ── */
+        #order {
+            padding: 20px 5%;
+            background: var(--gray-100);
+        }
+
+        .order-layout {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 32px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .form-card,
+        .summary-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 16px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, .06);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            font-size: .85rem;
+            font-weight: 700;
+            color: var(--gray-700);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .required {
+            color: var(--red);
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            border: 1.5px solid var(--gray-300);
+            border-radius: 10px;
+            padding: 11px 14px;
+            font-family: var(--font-body);
+            font-size: .93rem;
+            color: var(--gray-900);
+            transition: border-color .2s, box-shadow .2s;
+            background: white;
+            outline: none;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: var(--purple);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, .1);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: #bbb;
+        }
+
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 36px;
+        }
+
+        .form-select:disabled {
+            background-color: var(--gray-200);
+            color: var(--gray-500);
+            cursor: not-allowed;
+        }
+
+        .address-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .summary-title {
+            font-weight: 900;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            color: var(--gray-900);
+        }
+
+        .summary-product {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--gray-200);
+            margin-bottom: 16px;
+        }
+
+        .summary-product-img {
+            font-size: 2.5rem;
+        }
+
+        .summary-product-info strong {
+            font-weight: 800;
+            font-size: .93rem;
+        }
+
+        .summary-product-info span {
+            font-size: .82rem;
+            color: var(--gray-500);
+            display: block;
+            margin-top: 2px;
+        }
+
+        .summary-product-price {
+            margin-left: auto;
+            font-weight: 800;
+            color: var(--purple);
+        }
+
+        .summary-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: .9rem;
+            color: var(--gray-700);
+        }
+
+        .summary-row.discount {
+            color: var(--red);
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 900;
+            font-size: 1.1rem;
+            padding-top: 14px;
+            border-top: 2px solid var(--gray-200);
+        }
+
+        .summary-total span:last-child {
+            color: var(--purple);
+        }
+
+        .btn-order {
+            width: 100%;
+            background: var(--purple);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 16px;
+            font-family: var(--font-body);
+            font-weight: 800;
+            font-size: 1.05rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+            box-shadow: 0 6px 24px rgba(124, 58, 237, .4);
+            transition: all .25s;
+            letter-spacing: .3px;
+        }
+
+        .btn-order:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 32px rgba(124, 58, 237, .5);
+        }
+
+        .btn-order:disabled {
+            background: var(--gray-300);
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+
+        .secure-note {
+            text-align: center;
+            font-size: .78rem;
+            color: var(--gray-500);
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        /* TOAST */
+        #toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            background: var(--gray-900);
+            color: white;
+            padding: 14px 22px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: .9rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, .25);
+            transform: translateY(80px);
+            opacity: 0;
+            transition: all .35s cubic-bezier(.34, 1.56, .64, 1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 340px;
+        }
+
+        #toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        #toast.success {
+            background: var(--green);
+        }
+
+        #toast.error {
+            background: var(--red);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--gray-900);
+            color: white;
+            padding: 48px 5% 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            font-size: .88rem;
+            color: #9ca3af;
+            line-height: 1.7;
+            margin: 12px 0 20px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, .1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .9rem;
+            cursor: pointer;
+            transition: background .2s;
+            text-decoration: none;
+            color: white;
+        }
+
+        .social-btn:hover {
+            background: var(--purple);
+        }
+
+        .footer-col h4 {
+            font-weight: 800;
+            font-size: .92rem;
+            margin-bottom: 14px;
+            color: white;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-col ul a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: .87rem;
+            transition: color .2s;
+        }
+
+        .footer-col ul a:hover {
+            color: white;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: .87rem;
+            color: #9ca3af;
+        }
+
+        .contact-item span:first-child {
+            margin-top: 1px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: gap;
+        }
+
+        .footer-bottom p {
+            font-size: .82rem;
+            color: #6b7280;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .payment-icon {
+            background: white;
+            border-radius: 6px;
+            padding: 4px 8px;
+            font-size: .7rem;
+            font-weight: 800;
+            color: var(--gray-900);
+        }
+
+        /* ── LOADING SPINNER ── */
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, .4);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin .6s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ── FADE IN ── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp .6s ease both;
+        }
+
+        .delay-1 {
+            animation-delay: .1s;
+        }
+
+        .delay-2 {
+            animation-delay: .2s;
+        }
+
+        .delay-3 {
+            animation-delay: .3s;
+        }
+
+        .delay-4 {
+            animation-delay: .4s;
+        }
+
+        .hero-img {
+            width: 100%;
+        }
+
+        /* ── PRODUCT CAROUSEL ── */
+        #product {
+            background: var(--white);
+            padding: 0;
+            position: relative;
+            /* Ngăn overflow ngang làm vỡ layout mobile */
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        .prod-carousel-wrap {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .prod-viewport {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            /* Đảm bảo không tạo scroll ngang */
+            display: block;
+        }
+
+        .prod-track {
+            display: flex;
+            width: 100%;
+            /* Không dùng transition gây reflow khi resize */
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Ngăn flex item co giãn sai */
+            will-change: transform;
+        }
+
+        .prod-slide {
+            /* flex basis 100% của viewport, không shrink/grow */
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .prod-slide img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            display: block;
+            object-fit: contain;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .prod-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.92);
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 1.6rem;
+            line-height: 1;
+            color: var(--purple);
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .prod-btn:hover {
+            background: var(--purple);
+            color: white;
+        }
+
+        .prod-prev {
+            left: 10px;
+        }
+
+        .prod-next {
+            right: 10px;
+        }
+
+        .prod-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 0 18px;
+            background: var(--white);
+        }
+
+        .prod-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--gray-300);
+            cursor: pointer;
+            border: none;
+            padding: 0;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .prod-dot.active {
+            background: var(--purple);
+            width: 28px;
+            border-radius: 5px;
+        }
+
+        /* ── PRODUCT DESCRIPTION SECTION ── */
+        #product-desc {
+            background: var(--white);
+            padding: 10px 5% 10px;
+            border-top: 1px solid var(--gray-200);
+        }
+        .pdesc-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .pdesc-brand-tag {
+            font-size: .8rem;
+            font-weight: 800;
+            color: #ef4444;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .pdesc-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 900;
+            color: var(--purple);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        .pdesc-subtitle {
+            font-size: .95rem;
+            font-weight: 700;
+            color: var(--gray-700);
+            margin-bottom: 14px;
+            letter-spacing: .3px;
+        }
+        .pdesc-body {
+            font-size: .97rem;
+            color: var(--gray-700);
+            line-height: 1.75;
+        }
+        .pdesc-section-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+        }
+        .pdesc-checklist {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 24px;
+            list-style: none;
+        }
+        .pdesc-checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: .93rem;
+            color: var(--gray-700);
+            line-height: 1.5;
+        }
+        .pdesc-checklist li::before {
+            content: '✔';
+            color: var(--green);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .pdesc-variants {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .pdesc-variant {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: var(--vbg);
+            border-radius: 12px;
+            padding: 16px;
+            border-left: 4px solid var(--vc);
+        }
+        .pdesc-variant-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--vc);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        .pdesc-variant strong {
+            font-size: .92rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            display: block;
+            margin-bottom: 5px;
+        }
+        .pdesc-variant p {
+            font-size: .85rem;
+            color: var(--gray-700);
+            line-height: 1.55;
+            margin-bottom: 8px;
+        }
+        .pdesc-tag {
+            display: inline-block;
+            font-size: .74rem;
+            font-weight: 700;
+            color: var(--vc);
+            background: rgba(0,0,0,.06);
+            border-radius: 20px;
+            padding: 3px 10px;
+        }
+        .pdesc-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .pdesc-info-box {
+            background: var(--gray-100);
+            border-radius: 12px;
+            padding: 22px;
+        }
+        .pdesc-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: .9rem;
+        }
+        .pdesc-table tr {
+            border-bottom: 1px solid var(--gray-300);
+        }
+        .pdesc-table tr:last-child { border-bottom: none; }
+        .pdesc-table td {
+            padding: 9px 0;
+            color: var(--gray-700);
+        }
+        .pdesc-table td:first-child {
+            width: 44%;
+            color: var(--gray-500);
+        }
+        .pdesc-steps {
+            list-style: none;
+            counter-reset: step;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .pdesc-steps li {
+            counter-increment: step;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: .92rem;
+            color: var(--gray-700);
+        }
+        .pdesc-steps li::before {
+            content: counter(step);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--purple);
+            color: white;
+            font-weight: 800;
+            font-size: .8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .pdesc-commit {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            background: var(--purple-pale);
+            border-radius: 14px;
+            padding: 20px 28px;
+        }
+        .pdesc-commit-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: .92rem;
+            font-weight: 700;
+            color: var(--purple);
+        }
+        .pdesc-commit-item span:first-child {
+            font-size: 1rem;
+            color: var(--green);
+        }
+        .pdesc-cta-wrap { text-align: center; }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 4%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            #hero {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .hero-badges {
+                justify-content: center;
+            }
+
+            .hero-image img {
+                max-height: 220px;
+            }
+
+            .feature-card {
+                min-width: calc(85%);
+            }
+
+            .combo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .order-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row,
+            .address-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .trust-row {
+                flex-direction: column;
+            }
+            .pdesc-checklist {
+                grid-template-columns: 1fr;
+            }
+            .pdesc-variants {
+                grid-template-columns: 1fr;
+            }
+            .pdesc-bottom {
+                grid-template-columns: 1fr;
+            }
+            .pdesc-commit {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-logo">
+            <svg viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="20" fill="#f3e8ff" /><text x="20" y="26" text-anchor="middle" font-size="18"
+                    fill="#7c3aed">🌿</text>
+            </svg>
+            <span>TEEBONG SHOP</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero" class="active">Trang chủ</a></li>
+            <li><a href="#product">Sản phẩm</a></li>
+            <li><a href="#combo">Ưu đãi</a></li>
+            <li><a href="#order">Đặt hàng</a></li>
+            <li><a href="#footer">Liên hệ</a></li>
+        </ul>
+        <button class="nav-cart" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">
+            🛒 Mua Ngay
+        </button>
+    </nav>
+    <!-- PRODUCT CAROUSEL -->
+    <section id="product">
+        <div class="prod-carousel-wrap">
+            <button class="prod-btn prod-prev" id="prodPrev" onclick="prodSlide(-1)">&#8249;</button>
+
+            <div class="prod-viewport">
+                <div class="prod-track" id="prodTrack">
+                    <div onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})"
+                        class="prod-slide"><img src="./img/banner 3.png" alt="Sữa tắm xanh"></div>
+                    <div onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})"
+                        class="prod-slide"><img src="./img/xanh.png" alt="Sữa tắm xanh"></div>
+                    <div onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})"
+                        class="prod-slide"><img src="./img/hồng.png" alt="Sữa tắm hồng"></div>
+                    <div onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})"
+                        class="prod-slide"><img src="./img/nâu.png" alt="Sữa tắm nâu"></div>
+                    <div onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})"
+                        class="prod-slide"><img src="./img/tím.png" alt="Sữa tắm tím"></div>
+                    <div onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})"
+                        class="prod-slide"><img src="./img/vàng.png" alt="Sữa tắm vàng"></div>
+                    <div onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})"
+                        class="prod-slide"><img src="./img/xanh lá.png" alt="Sữa tắm xanh lá"></div>
+                </div>
+            </div>
+
+            <button class="prod-btn prod-next" id="prodNext" onclick="prodSlide(1)">&#8250;</button>
+        </div>
+
+        <div class="prod-dots" id="prodDots"></div>
+    </section>
+
+    <!-- PRODUCT DESCRIPTION -->
+    <section id="product-desc">
+        <div class="pdesc-inner">
+
+            <!-- Intro -->
+            <div class="pdesc-intro">
+                <p class="pdesc-brand-tag">❤ GIỚI THIỆU SẢN PHẨM CHÍNH HÃNG DORRIKEY</p>
+                <h2 class="pdesc-title">Sữa Tắm Chó Mèo DORRIKEY 510ml Cao Cấp</h2>
+                <p class="pdesc-subtitle">Khử mùi · Diệt ve rận · Hỗ trợ nấm ngứa · Dưỡng mượt lông thú cưng</p>
+                <p class="pdesc-body">Sữa tắm DORRIKEY 510ml được chiết xuất từ dầu dừa thiên nhiên, giúp làm sạch sâu, loại bỏ mùi hôi, nuôi dưỡng bộ lông mềm mượt và thơm lâu. Sản phẩm được thiết kế với <strong>6 công dụng chuyên biệt</strong>, phù hợp cho từng loại lông và từng nhu cầu chăm sóc khác nhau của thú cưng.</p>
+            </div>
+
+            <!-- Highlights -->
+            <div class="pdesc-highlights">
+                <h3 class="pdesc-section-title">✨ Ưu Điểm Nổi Bật</h3>
+                <ul class="pdesc-checklist">
+                    <li>Làm sạch sâu, loại bỏ bụi bẩn và bã nhờn</li>
+                    <li>Khử mùi hôi hiệu quả, lưu hương thơm dễ chịu</li>
+                    <li>Dịu nhẹ cho da, phù hợp dùng thường xuyên</li>
+                    <li>Dưỡng lông mềm mượt, hạn chế xơ rối</li>
+                    <li>Hỗ trợ chăm sóc da, giảm kích ứng</li>
+                    <li>Dung tích lớn 510ml, tiết kiệm sử dụng</li>
+                </ul>
+            </div>
+
+            <!-- Variants -->
+            <div class="pdesc-variants-wrap">
+                <h3 class="pdesc-section-title">🎨 Phân Loại Sản Phẩm</h3>
+                <div class="pdesc-variants">
+                    <div class="pdesc-variant" style="--vc:#3b82f6;--vbg:#eff6ff">
+                        <div class="pdesc-variant-dot"></div>
+                        <div>
+                            <strong>🔵 Xanh Dương – Dành cho lông trắng</strong>
+                            <p>Làm sáng lông tự nhiên, giảm ố vàng, giúp lông trắng sạch mềm mượt.</p>
+                            <span class="pdesc-tag">Samoyed · Poodle trắng · Mèo lông trắng</span>
+                        </div>
+                    </div>
+                    <div class="pdesc-variant" style="--vc:#92400e;--vbg:#fef3c7">
+                        <div class="pdesc-variant-dot"></div>
+                        <div>
+                            <strong>🟤 Nâu – Dành cho lông nâu, đỏ</strong>
+                            <p>Giữ màu lông tự nhiên, làm nổi bật sắc lông nâu đỏ, dưỡng lông bóng khỏe.</p>
+                            <span class="pdesc-tag">Poodle nâu · Corgi · Alaska nâu đỏ</span>
+                        </div>
+                    </div>
+                    <div class="pdesc-variant" style="--vc:#d97706;--vbg:#fffbeb">
+                        <div class="pdesc-variant-dot"></div>
+                        <div>
+                            <strong>🟡 Vàng – Kháng khuẩn, hỗ trợ nấm ngứa</strong>
+                            <p>Làm sạch sâu, hỗ trợ giảm vi khuẩn và nấm da, làm dịu vùng da kích ứng.</p>
+                            <span class="pdesc-tag">Thú cưng da nhạy cảm · Dễ ngứa</span>
+                        </div>
+                    </div>
+                    <div class="pdesc-variant" style="--vc:#7c3aed;--vbg:#f3e8ff">
+                        <div class="pdesc-variant-dot"></div>
+                        <div>
+                            <strong>🟣 Tím – Universal siêu dưỡng</strong>
+                            <p>Dưỡng lông mềm mượt, giữ hương thơm lâu, phù hợp mọi giống chó mèo.</p>
+                            <span class="pdesc-tag">Chăm sóc hằng ngày · Mọi giống</span>
+                        </div>
+                    </div>
+                    <div class="pdesc-variant" style="--vc:#db2777;--vbg:#fdf2f8">
+                        <div class="pdesc-variant-dot"></div>
+                        <div>
+                            <strong>🩷 Hồng – Loại bỏ ve rận, bọ chét</strong>
+                            <p>Hỗ trợ làm sạch ve rận, giảm bọ chét bọ nhảy, bảo vệ da lông thú cưng.</p>
+                            <span class="pdesc-tag">Chó mèo thường xuyên vận động ngoài trời</span>
+                        </div>
+                    </div>
+                    <div class="pdesc-variant" style="--vc:#059669;--vbg:#ecfdf5">
+                        <div class="pdesc-variant-dot"></div>
+                        <div>
+                            <strong>🟢 Xanh Lá – Chuyên dụng cho mèo</strong>
+                            <p>Công thức dịu nhẹ riêng cho mèo, không gây cay mắt, làm sạch và dưỡng lông hiệu quả.</p>
+                            <span class="pdesc-tag">Tất cả các giống mèo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info + Usage (2 col) -->
+            <div class="pdesc-bottom">
+                <div class="pdesc-info-box">
+                    <h3 class="pdesc-section-title">📋 Thông Tin Sản Phẩm</h3>
+                    <table class="pdesc-table">
+                        <tr><td>Thương hiệu</td><td><strong>DORRIKEY</strong></td></tr>
+                        <tr><td>Dung tích</td><td><strong>510ml</strong></td></tr>
+                        <tr><td>Xuất xứ</td><td><strong>Nội địa cao cấp</strong></td></tr>
+                        <tr><td>Hạn sử dụng</td><td><strong>In trên bao bì</strong></td></tr>
+                    </table>
+                </div>
+                <div class="pdesc-info-box">
+                    <h3 class="pdesc-section-title">💧 Hướng Dẫn Sử Dụng</h3>
+                    <ol class="pdesc-steps">
+                        <li>Làm ướt lông thú cưng</li>
+                        <li>Lấy lượng vừa đủ, massage nhẹ nhàng</li>
+                        <li>Xả sạch bằng nước</li>
+                        <li>Lau khô và sấy nhẹ</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Commitment -->
+            <div class="pdesc-commit">
+                <div class="pdesc-commit-item"><span>✔</span><span>Sản phẩm chính hãng</span></div>
+                <div class="pdesc-commit-item"><span>✔</span><span>Đóng góproduct-desc cẩn thận</span></div>
+                <div class="pdesc-commit-item"><span>✔</span><span>Hỗ trợ tư vấn chọn loại phù hợp</span></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ORDER FORM -->
+    <section id="order">
+        <div class="section-header">
+            <p class="section-tag">📋 ĐẶT HÀNG NGAY</p>
+        </div>
+        <div class="order-layout">
+            <div class="form-card">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Họ và tên <span class="required">*</span></label>
+                        <input type="text" class="form-input" id="fullname" placeholder="Nhập họ và tên">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Số điện thoại <span class="required">*</span></label>
+                        <input type="tel" class="form-input" id="phone" placeholder="Nhập số điện thoại">
+                    </div>
+                </div>
+
+                <div class="address-row">
+                    <div class="form-group" style="margin-bottom:0">
+                        <label class="form-label">Tỉnh / Thành phố <span class="required">*</span></label>
+                        <select class="form-select" id="province" onchange="loadDistricts()">
+                            <option value="">Chọn tỉnh / thành phố</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom:0">
+                        <label class="form-label">Quận / Huyện <span class="required">*</span></label>
+                        <select class="form-select" id="district" onchange="loadWards()" disabled>
+                            <option value="">Chọn quận / huyện</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom:0">
+                        <label class="form-label">Phường / Xã <span class="required">*</span></label>
+                        <select class="form-select" id="ward" disabled>
+                            <option value="">Chọn phường / xã</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top:16px">
+                    <label class="form-label">Địa chỉ chi tiết <span class="required">*</span></label>
+                    <input type="text" class="form-input" id="address"
+                        placeholder="Số nhà, tên đường, tòa nhà, căn hộ...">
+                </div>
+                <!-- COMBO -->
+                <section id="combo">
+                    <div class="combo-grid" id="comboGrid">
+                        <div class="combo-card" data-combo="1" data-price="99000" data-original="199000"
+                            data-save="25000" onclick="selectCombo(this)">
+                            <div class="combo-radio"></div>
+                            <div class="combo-name">Combo 1 chai</div>
+                            <div class="combo-price">99.000đ</div>
+                            <div class="combo-original">199.000đ</div>
+                            <div class="combo-save">Tiết kiệm 100.000đ</div>
+                        </div>
+                        <div class="combo-card" data-combo="2" data-price="179000" data-original="399000"
+                            data-save="50000" onclick="selectCombo(this)">
+                            <div class="combo-badge">-55%</div>
+                            <div class="combo-radio"></div>
+                            <div class="combo-name">Combo 2 chai</div>
+                            <div class="combo-price">179.000đ</div>
+                            <div class="combo-original">399.000đ</div>
+                            <div class="combo-save">Tiết kiệm 220.000đ</div>
+                        </div>
+                        <div class="combo-card selected" data-combo="3" data-price="249000" data-original="599000"
+                            data-save="75000" onclick="selectCombo(this)">
+                            <div class="combo-badge hot">-59%</div>
+                            <div class="combo-radio"></div>
+                            <div class="combo-name">Combo 3 chai</div>
+                            <div class="combo-price">249.000đ</div>
+                            <div class="combo-original">599.000đ</div>
+                            <div class="combo-save">Tiết kiệm 350.000đ</div>
+                        </div>
+                        <div class="combo-card" data-combo="4" data-price="319000" data-original="799000"
+                            data-save="100000" onclick="selectCombo(this)">
+                            <div class="combo-badge" style="background:#f97316">-62%</div>
+                            <div class="combo-radio"></div>
+                            <div class="combo-name">Combo 4 chai</div>
+                            <div class="combo-price">309.000đ</div>
+                            <div class="combo-original">799.000đ</div>
+                            <div class="combo-save">Tiết kiệm 490.000đ</div>
+                        </div>
+                    </div>
+                </section>
+                <div class="form-group">
+                    <label class="form-label">Ghi chú</label>
+                    <textarea class="form-textarea" id="note"
+                        placeholder="Ghi rõ màu muốn mua...
+VD: 2 nâu, 1 vàng"></textarea>
+                </div>
+            </div>
+
+            <!-- SUMMARY -->
+            <div class="summary-card">
+                <div class="summary-title">ĐƠN HÀNG CỦA BẠN</div>
+                <div class="summary-product">
+                    <div class="summary-product-img">🧴</div>
+                    <div class="summary-product-info">
+                        <strong id="summaryComboName">Combo 3 chai</strong>
+                        <span>Số lượng: 1</span>
+                    </div>
+                    <div class="summary-product-price" id="summaryPrice">249.000đ</div>
+                </div>
+                <div class="summary-rows">
+                    <div class="summary-row"><span>Tạm tính</span><span id="summarySubtotal">249.000đ</span></div>
+                    <div class="summary-row"><span>Phí vận chuyển</span><span>Miễn ship</span></div>
+                </div>
+                <div class="summary-total">
+                    <span>Tổng cộng</span>
+                    <span id="summaryTotal">249.000đ</span>
+                </div>
+                <button class="btn-order" id="orderBtn" onclick="submitOrder()">
+                    🛒 ĐẶT HÀNG
+                </button>
+                <div class="secure-note">🔒 Thông tin của bạn được bảo mật tuyệt đối</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+                    <span style="font-size:1.5rem">🌿</span>
+                    <span style="font-weight:900;font-size:1.1rem">TEEBONG SHOP</span>
+                </div>
+                <p>Sản phẩm sữa tắm cao cấp cho chó mèo, được chiết xuất từ thiên nhiên, an toàn và dịu nhẹ cho thú
+                    cưng.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-btn">f</a>
+                    <a href="#" class="social-btn">T</a>
+                    <a href="#" class="social-btn">📷</a>
+                    <a href="#" class="social-btn">▶</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>VỀ CHÚNG TÔI</h4>
+                <ul>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Chính sách</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                <ul>
+                    <li><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Chính sách vận chuyển</a></li>
+                    <li><a href="#">Câu hỏi thường gặp</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>LIÊN HỆ</h4>
+                <div class="footer-contact">
+                    <div class="contact-item"><span>📞</span><span>0869.829.725</span></div>
+                    <div class="contact-item"><span>✉️</span><span>teebong2026@gmail.com</span></div>
+                    <div class="contact-item"><span>📍</span><span>348 Nguyễn Trãi Trung Văn Nam Từ Liêm Hà Nộ<input type="button" value=""></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Teebong Vietnam. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- TOAST -->
+    <div id="toast">
+        <span id="toastIcon">✅</span>
+        <span id="toastMsg">Thao tác thành công!</span>
+    </div>
+
+    <script>
+        // ─── CONFIG ─────────────────────────────────────────────────────────────────
+        // Thay YOUR_GOOGLE_APPS_SCRIPT_URL bằng URL của Google Apps Script Web App
+        const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxIB3V1QEfW7OUsXf_5KMS-NDL2kLxczHpYiv6O15cdzoW_-AMCQF4-KnN8VidPteWuhA/exec';
+
+        // ─── SLIDER ─────────────────────────────────────────────────────────────────
+        let currentSlide = 0;
+        const totalSlides = 1; // max offset index
+
+        function slide(dir) {
+            currentSlide = Math.max(0, Math.min(totalSlides, currentSlide + dir));
+            updateSlider();
+        }
+        function goSlide(i) { currentSlide = i; updateSlider(); }
+        function updateSlider() {
+            const track = document.getElementById('featureTrack');
+            const cardW = track.children[0].offsetWidth + 20;
+            track.style.transform = `translateX(-${currentSlide * cardW}px)`;
+            document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+        }
+
+        // ─── COMBO SELECTION ─────────────────────────────────────────────────────────
+        let selectedCombo = { name: 'Combo 3 chai', price: 249000, combo: 3 };
+
+        function selectCombo(el) {
+            document.querySelectorAll('.combo-card').forEach(c => c.classList.remove('selected'));
+            el.classList.add('selected');
+            const price = parseInt(el.dataset.price);
+            const name = `Combo ${el.dataset.combo} chai`;
+            selectedCombo = { name, price, combo: el.dataset.combo };
+            const fmt = n => n.toLocaleString('vi-VN') + 'đ';
+            document.getElementById('summaryComboName').textContent = name;
+            document.getElementById('summaryPrice').textContent = fmt(price);
+            document.getElementById('summarySubtotal').textContent = fmt(price);
+            document.getElementById('summaryTotal').textContent = fmt(price);
+        }
+
+        // ─── ADDRESS API (provinces.open-api.vn) ─────────────────────────────────────
+        const API = 'https://provinces.open-api.vn/api';
+
+        async function fetchJSON(url) {
+            const r = await fetch(url);
+            if (!r.ok) throw new Error('Lỗi tải dữ liệu');
+            return r.json();
+        }
+
+        async function loadProvinces() {
+            try {
+                const data = await fetchJSON(`${API}/p/`);
+                const sel = document.getElementById('province');
+                data.sort((a, b) => a.name.localeCompare(b.name));
+                data.forEach(p => {
+                    const o = document.createElement('option');
+                    o.value = p.code; o.textContent = p.name;
+                    sel.appendChild(o);
+                });
+            } catch (e) { showToast('Không tải được danh sách tỉnh thành. Vui lòng thử lại.', 'error'); }
+        }
+
+        async function loadDistricts() {
+            const code = document.getElementById('province').value;
+            const dSel = document.getElementById('district');
+            const wSel = document.getElementById('ward');
+            dSel.innerHTML = '<option value="">Chọn quận / huyện</option>';
+            wSel.innerHTML = '<option value="">Chọn phường / xã</option>';
+            dSel.disabled = true; wSel.disabled = true;
+            if (!code) return;
+            try {
+                const data = await fetchJSON(`${API}/p/${code}?depth=2`);
+                const districts = data.districts || [];
+                districts.sort((a, b) => a.name.localeCompare(b.name));
+                districts.forEach(d => {
+                    const o = document.createElement('option');
+                    o.value = d.code; o.textContent = d.name;
+                    dSel.appendChild(o);
+                });
+                dSel.disabled = false;
+            } catch (e) { showToast('Không tải được danh sách quận/huyện.', 'error'); }
+        }
+
+        async function loadWards() {
+            const code = document.getElementById('district').value;
+            const wSel = document.getElementById('ward');
+            wSel.innerHTML = '<option value="">Chọn phường / xã</option>';
+            wSel.disabled = true;
+            if (!code) return;
+            try {
+                const data = await fetchJSON(`${API}/d/${code}?depth=2`);
+                const wards = data.wards || [];
+                wards.sort((a, b) => a.name.localeCompare(b.name));
+                wards.forEach(w => {
+                    const o = document.createElement('option');
+                    o.value = w.code; o.textContent = w.name;
+                    wSel.appendChild(o);
+                });
+                wSel.disabled = false;
+            } catch (e) { showToast('Không tải được danh sách phường/xã.', 'error'); }
+        }
+
+        // ─── SUBMIT ORDER → GOOGLE SHEETS ────────────────────────────────────────────
+        async function submitOrder() {
+            const fullname = document.getElementById('fullname').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const provSel = document.getElementById('province');
+            const distSel = document.getElementById('district');
+            const wardSel = document.getElementById('ward');
+            const address = document.getElementById('address').value.trim();
+            const note = document.getElementById('note').value.trim();
+
+            // Validation
+            if (!fullname) { showToast('Vui lòng nhập họ và tên!', 'error'); document.getElementById('fullname').focus(); return; }
+            if (!phone || !/^(0[3|5|7|8|9])+([0-9]{8})$/.test(phone)) { showToast('Số điện thoại không hợp lệ!', 'error'); document.getElementById('phone').focus(); return; }
+            if (!provSel.value) { showToast('Vui lòng chọn tỉnh/thành phố!', 'error'); return; }
+            if (!distSel.value) { showToast('Vui lòng chọn quận/huyện!', 'error'); return; }
+            if (!wardSel.value) { showToast('Vui lòng chọn phường/xã!', 'error'); return; }
+            if (!address) { showToast('Vui lòng nhập địa chỉ chi tiết!', 'error'); document.getElementById('address').focus(); return; }
+
+            const provinceName = provSel.options[provSel.selectedIndex].text;
+            const districtName = distSel.options[distSel.selectedIndex].text;
+            const wardName = wardSel.options[wardSel.selectedIndex].text;
+            const fullAddress = `${address}, ${wardName}, ${districtName}, ${provinceName}`;
+
+            const payload = {
+                timestamp: new Date().toLocaleString('vi-VN'),
+                fullname,
+                phone: "'" + phone,
+                province: provinceName,
+                district: districtName,
+                ward: wardName,
+                address: fullAddress,
+                combo: selectedCombo.name,
+                price: selectedCombo.price.toLocaleString('vi-VN') + 'đ',
+                total: (selectedCombo.price + 30000).toLocaleString('vi-VN') + 'đ',
+                note
+            };
+
+            const btn = document.getElementById('orderBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span> Đang xử lý...';
+
+            // Kiểm tra nếu chưa cấu hình URL
+            if (GOOGLE_SHEET_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL') {
+                // Demo mode: giả lập thành công
+                await new Promise(r => setTimeout(r, 1500));
+                btn.disabled = false;
+                btn.innerHTML = '🛒 ĐẶT HÀNG';
+                showToast('✅ Đặt hàng thành công! (Demo - chưa cấu hình Google Sheets)', 'success');
+                console.log('Order data (demo):', payload);
+                resetForm();
+                return;
+            }
+
+            try {
+                const res = await fetch(GOOGLE_SHEET_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                // no-cors: response.type = 'opaque', assume success
+                showToast('🎉 Đặt hàng thành công! Chúng tôi sẽ liên hệ sớm.', 'success');
+                resetForm();
+            } catch (e) {
+                showToast('Có lỗi xảy ra. Vui lòng thử lại hoặc gọi hotline!', 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '🛒 ĐẶT HÀNG';
+            }
+        }
+
+        function resetForm() {
+            ['fullname', 'phone', 'address', 'note'].forEach(id => document.getElementById(id).value = '');
+            document.getElementById('province').value = '';
+            document.getElementById('district').innerHTML = '<option value="">Chọn quận / huyện</option>';
+            document.getElementById('district').disabled = true;
+            document.getElementById('ward').innerHTML = '<option value="">Chọn phường / xã</option>';
+            document.getElementById('ward').disabled = true;
+        }
+
+        // ─── TOAST ───────────────────────────────────────────────────────────────────
+        let toastTimer;
+        function showToast(msg, type = 'success') {
+            const t = document.getElementById('toast');
+            const m = document.getElementById('toastMsg');
+            const i = document.getElementById('toastIcon');
+            t.className = `show ${type}`;
+            m.textContent = msg;
+            i.textContent = type === 'success' ? '✅' : '❌';
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => t.classList.remove('show'), 4000);
+        }
+
+        // ─── PRODUCT CAROUSEL ────────────────────────────────────────────────────────
+        const PROD_TOTAL = 6;
+        let prodIndex = 0;
+        let prodTimer;
+
+        const dotsWrap = document.getElementById('prodDots');
+        for (let i = 0; i < PROD_TOTAL; i++) {
+            const d = document.createElement('button');
+            d.className = 'prod-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('aria-label', 'Slide ' + (i + 1));
+            d.addEventListener('click', () => { prodGoto(i); resetProdTimer(); });
+            dotsWrap.appendChild(d);
+        }
+
+        function prodGoto(idx) {
+            prodIndex = (idx + PROD_TOTAL) % PROD_TOTAL;
+            document.getElementById('prodTrack').style.transform = 'translateX(-' + (prodIndex * 100) + '%)';
+            document.querySelectorAll('.prod-dot').forEach((d, i) => d.classList.toggle('active', i === prodIndex));
+        }
+
+        function prodSlide(dir) { prodGoto(prodIndex + dir); resetProdTimer(); }
+
+        function resetProdTimer() {
+            clearInterval(prodTimer);
+            prodTimer = setInterval(() => prodGoto(prodIndex + 1), 3500);
+        }
+
+        let touchStartX = 0;
+        const prodTrackEl = document.getElementById('prodTrack');
+        prodTrackEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        prodTrackEl.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) prodSlide(diff > 0 ? 1 : -1);
+        });
+
+        resetProdTimer();
+
+        // ─── INIT ─────────────────────────────────────────────────────────────────────
+        loadProvinces();
+    </script>
+
+    <!-- 
+═══════════════════════════════════════════════════════════════
+  HƯỚNG DẪN CÀI ĐẶT GOOGLE SHEETS
+═══════════════════════════════════════════════════════════════
+
+BƯỚC 1: Tạo Google Sheet mới
+  - Đặt tên các cột dòng đầu:
+    Thời gian | Họ tên | SĐT | Tỉnh/TP | Quận/Huyện | Phường/Xã | Địa chỉ đầy đủ | Combo | Giá | Tổng tiền | Ghi chú
+
+BƯỚC 2: Tạo Apps Script
+  - Trong Google Sheet, vào Extensions → Apps Script
+  - Dán code sau vào:
+
+  function doPost(e) {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var data = JSON.parse(e.postData.contents);
+    sheet.appendRow([
+      data.timestamp, data.fullname, data.phone,
+      data.province, data.district, data.ward,
+      data.address, data.combo, data.price,
+      data.total, data.note
+    ]);
+    return ContentService
+      .createTextOutput(JSON.stringify({status: 'success'}))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
+BƯỚC 3: Deploy Web App
+  - Click Deploy → New Deployment → Web App
+  - Execute as: Me | Who has access: Anyone
+  - Copy URL → dán vào biến GOOGLE_SHEET_URL ở đầu script
+
+═══════════════════════════════════════════════════════════════
+-->
+</body>
+
+</html>
