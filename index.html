@@ -1956,40 +1956,6 @@ VD: 2 nâu, 1 vàng"></textarea>
         loadProvinces();
     </script>
 
-    <!-- 
-═══════════════════════════════════════════════════════════════
-  HƯỚNG DẪN CÀI ĐẶT GOOGLE SHEETS
-═══════════════════════════════════════════════════════════════
-
-BƯỚC 1: Tạo Google Sheet mới
-  - Đặt tên các cột dòng đầu:
-    Thời gian | Họ tên | SĐT | Tỉnh/TP | Quận/Huyện | Phường/Xã | Địa chỉ đầy đủ | Combo | Giá | Tổng tiền | Ghi chú
-
-BƯỚC 2: Tạo Apps Script
-  - Trong Google Sheet, vào Extensions → Apps Script
-  - Dán code sau vào:
-
-  function doPost(e) {
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    var data = JSON.parse(e.postData.contents);
-    sheet.appendRow([
-      data.timestamp, data.fullname, data.phone,
-      data.province, data.district, data.ward,
-      data.address, data.combo, data.price,
-      data.total, data.note
-    ]);
-    return ContentService
-      .createTextOutput(JSON.stringify({status: 'success'}))
-      .setMimeType(ContentService.MimeType.JSON);
-  }
-
-BƯỚC 3: Deploy Web App
-  - Click Deploy → New Deployment → Web App
-  - Execute as: Me | Who has access: Anyone
-  - Copy URL → dán vào biến GOOGLE_SHEET_URL ở đầu script
-
-═══════════════════════════════════════════════════════════════
--->
 </body>
 
 </html>
